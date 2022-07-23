@@ -94,7 +94,7 @@ void le_minuto_inicio(Evento *p){
 
 void le_hora_final(Evento *p){
     do{
-        printf("Digite a hora de inicio:\n");
+        printf("Digite a hora final:\n");
         eh_numero(&p->fim.hora);
 
         if(p->fim.hora > 24 || p->fim.hora < 0)
@@ -104,7 +104,7 @@ void le_hora_final(Evento *p){
 
 void le_minuto_final(Evento *p){
     do{
-        printf("Digite o minuto de inicio\n");
+        printf("Digite o minuto de final\n");
         eh_numero(&p->fim.minuto);
 
         if(p->fim.minuto > 59 || p->fim.minuto < 0)

@@ -30,7 +30,6 @@ int insere_ordem( Lista *p, void *info, int (*compara)(void*, void*) );
 void concatena( Lista *l1, Lista *l2 );
 void concatena_v2( Lista *l1, Lista *l2 );
 void mostra_lista_invertida( Lista l, void (*mostra)(void *) );
-
-
 int conta_elementos( Lista l ); // Fun��o in�til na pr�tica, pois temos o campo 'qtd'.
-
+Lista busca_varios( Lista l, void *info, int (*compara)(void*, void*) );
+void mostra_busca( Lista l, void *info, int (*compara)(void*, void*), void (*mostra)(void *) );

@@ -261,3 +261,32 @@ void mostra_lista_invertida( Lista l, void (*mostra)(void *) ){
 	printf("--------------------------------\n");	
 }
 
+Lista busca_varios( Lista l, void *info, int (*compara)(void*, void*) ){
+	Lista result;
+	inicializa_lista( &result, sizeof(int) ); // Lista de inteiros, pois são índices
+
+	int cont = 0;
+	Elemento *p = l.cabeca;
+	while( p != NULL ){ // Enquanto houver elementos na lista
+		if( compara( p->info, info ) == 0 )
+			insere_fim( &result, &cont ); // Guarda na lista de índices o valor de 'cont'
+		
+		p = p->proximo;
+		cont++;
+	}
+	return result; // Retorna a lista de índices
+}
+
+void mostra_busca( Lista l, void *info, int (*compara)(void*, void*), void (*mostra)(void *) ){
+	Elemento *p = l.cabeca;
+	int cont = 0;
+	while( p != NULL ){ // Enquanto houver elementos na lista
+		if( compara( p->info, info ) == 0 ){
+			printf("[%d] ", cont);
+			mostra( p->info );
+		}
+		p = p->proximo;
+		cont++;
+	}
+	printf("--------------------------------\n");
+}
